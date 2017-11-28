@@ -19,20 +19,6 @@ const send = async (logedInUser, recipient) => {
     text: recipient.fullname + ", აი ვისი სეკრეტ სანტა უნდა იყო ახალ წელს :):)"
   };
 
-  // const a = await smtpTransport.sendMail(mailOptions, err => {
-  //   if (err) {
-  //     returnValue = false;
-  //     console.log(returnValue + 'oop');
-  //   } else {
-  //     returnValue = true;
-  //     console.log(returnValue + 'oof');
-  //   }
-  //   console.log(returnValue + 'eee');
-  //   if (!returnValue) return false;
-    
-  //   return true
-  // });
-
   const sentmail = await smtpTransport.sendMail(mailOptions);
 
   if (sentmail.rejected.length != 0) return false;

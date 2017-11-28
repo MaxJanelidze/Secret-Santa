@@ -19,7 +19,7 @@ const userSchema = new Schema({
   },
   hasSanta: {
     type: String,
-    default: false
+    default: null
   },
   isSanta: {
     type: Boolean,

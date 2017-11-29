@@ -2,30 +2,32 @@ const User = require('./Models/userModel');
 
 const generate = async (logedInUser) => {  
 
+  if (logedInUser.isSanta) { return logedInUser; }
+
   const compareId = logedInUser.id;
+  let recipient = null;
+  let random = 0;
+  const usersAmount = await User.find({}).count(); // Count registered users amount!!!
 
-  let random = Math.floor(Math.random() * 4);
-  let rec = await  User.find({}).limit(1).skip(random);
+  while(!logedInUser.isSanta) {
 
-  let recipient = rec.pop();
-  
-  while(compareId == recipient.id) {
-
-    random = Math.floor(Math.random() * 4);
+    random = Math.floor(Math.random() * usersAmount);
     rec = await  User.find({}).limit(1).skip(random).exec();
 
     recipient = rec.pop();
 
-    if (logedInUser.isSanta) { return 'You are already a Santa'; }
+    if (compareId != recipient.id && recipient.id != logedInUser.mySanta) {
 
-    if (compareId != recipient.id) { return recipient; }
-  }
+      if (recipient.mySanta == null) {
 
-  if (logedInUser.isSanta) { return 'You are already a Santa'; }
+        await User.update({ '_id': recipient.id }, { $set: { 'mySanta': compareId } });
+        logedInUser = await User.update({ '_id': compareId }, { $set: { 'isSanta': true } });
 
-  return recipient;
-  
+        return recipient;
+        break;
+      }
+    }    
+  }  
 }
 
 module.exports = {generate};
-

@@ -17,7 +17,7 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
-  hasSanta: {
+  mySanta: {
     type: String,
     default: null
   },

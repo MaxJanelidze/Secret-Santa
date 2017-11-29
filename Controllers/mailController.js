@@ -12,6 +12,8 @@ module.exports = {
 
     if (!isOK) { res.send('Unfortunately mail does not sent.'); return; }
 
+    if (recipient == logedInUser) { res.send('You are already a Santa'); return; }
+
     res.render('email');
   }
 };

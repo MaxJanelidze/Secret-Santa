@@ -1,5 +1,5 @@
-const {generate} = require('../recipientGenerator');
-const {send} = require('../mailSender');
+const {generate} = require('../MailHelpers/recipientGenerator');
+const {send} = require('../MailHelpers/mailSender');
 
 module.exports = {
 

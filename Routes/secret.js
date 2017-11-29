@@ -1,6 +1,6 @@
 const router = require('express-promise-router')();
 
-const val = require('../checkUserValidation');
+const val = require('../Auth/checkUserValidation');
 const secretCtrl = require('../Controllers/secretController');
 
 router.route('/')

@@ -7,7 +7,6 @@ module.exports = {
 
   get: (req, res) => {
     const logedInUser = req.user;
-    console.log('Loged In: ' + logedInUser.fullname);
     res.render('secretsanta');
   }
 };

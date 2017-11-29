@@ -1,6 +1,6 @@
 const mailer = require("nodemailer");
 
-require("./Configurations/config");
+require("../Configurations/config");
 
 const send = async (logedInUser, recipient) => {
 

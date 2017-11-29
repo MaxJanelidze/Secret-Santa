@@ -1,6 +1,6 @@
 const router = require('express-promise-router')();
 const passport = require('passport');
-require('../passport');
+require('../Auth/passport');
 
 const User = require('../Models/userModel');
 const { signup } = require('../helpers/routeHelpers');

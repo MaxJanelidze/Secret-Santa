@@ -1,25 +1,23 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
 
 <head>
-  <title>Registration Page</title>
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>რეგისტრაცია</title>
 </head>
 
 <body>
-
-  <form action="/user/signup" method="POST">
-
-    <input type="text" name="fullname" placeholder="Fullname">
-    <br>
-    <input type="email" name="email" placeholder="e-mail">
-    <br>
-    <input type="password" name="password" placeholder="password">
-    <br>
-    <input type="submit" value="Sign Up">
-    
-  </form>
-
+  <div class='login'>
+    <h2>რეგისტრაცია</h2>
+    <form action="/user/signup" method="POST">      
+      <input name='fullname' placeholder='სრული სახელი' type='text' required>
+      <input name='email' placeholder='ელ-ფოსტა' type='email' required>      
+      <input id='pw' name='password' placeholder='პაროლი' type='password' required>
+      <input class='animated' type='submit' value='რეგისტრაცია'>
+      <a class='forgot' href='/user/login'>უკვე მაქვს ანგარიში</a>
+    </form>
+  </div>
 </body>
 
 </html>

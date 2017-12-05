@@ -1,5 +1,5 @@
 module.exports = {
   get: (req, res) => {
-    res.render("index");
+    res.redirect('/user/signup');
   }
 };

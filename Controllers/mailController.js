@@ -12,7 +12,7 @@ module.exports = {
 
     if (!isOK) { res.send('Unfortunately mail does not sent.'); return; }
 
-    if (recipient == logedInUser) { res.send('You are already a Santa'); return; }
+    if (recipient == logedInUser) { res.send('თქვენ უკვე ხართ სანტა.'); return; }
 
     res.render('email');
   }

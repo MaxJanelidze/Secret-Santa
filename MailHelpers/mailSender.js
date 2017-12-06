@@ -15,7 +15,7 @@ const send = async (logedInUser, recipient) => {
 
   const mailOptions = {
     to: logedInUser.email,
-    subject: "Secret santa",
+    subject: "ნესო - სეკრეტ სანტა",
     text: recipient.fullname + ", აი ვისი სეკრეტ სანტა უნდა იყო ახალ წელს :):)"
   };
 

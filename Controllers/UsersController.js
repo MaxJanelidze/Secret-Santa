@@ -1,14 +1,16 @@
-const User = require('../Models/userModel')
+const User = require('../Models/userModel');
+const emailCheck = require('email-check');
 
 module.exports = {
   // Sign Up
   signUp: async (req, res) => {
     const { fullname, email, password } = req.value.body;
+
     // Check if there is a user with the same email
     const foundUser = await User.findOne({ email });
-
+    
     if (foundUser) {
-      return res.status(403).json({ error: 'Email is already in use' });
+      return res.status(403).send('ელ-ფოსტა გამოყენებულია.');
     }
 
     const newUser = new User({ fullname, email, password });
